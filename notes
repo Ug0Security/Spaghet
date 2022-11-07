@@ -1,6 +1,6 @@
 Somebody Toucha My Spaghet
 
-http.favicon.hash:1620013509 PHPSESSID
+html:"GIGASYS Appliance"
 seems to be an appliance made by https://www.gigasys.info/
 
 multiple 302 bypass + SQLi as dba + file read AS ROOT + RCE AS FUCKING ROOT 
