@@ -3,8 +3,7 @@ Somebody Toucha My Spaghet
 html:"GIGASYS Appliance"
 seems to be an appliance made by https://www.gigasys.info/
 
-multiple 302 bypass + SQLi as dba + file read AS ROOT + RCE AS FUCKING ROOT 
-
+multiple 302 bypass + SQLi as dba + file read AS ROOT + RCE AS FUCKING ROOT (but depend on one module) + ANOTHER RCE AS FUCKING ROOT IN THE FUCKING LOGIN
 time spent : 9h30 - 15h30
 
 [SQLI]
